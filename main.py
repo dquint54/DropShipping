@@ -13,18 +13,21 @@ from selenium.webdriver.support import expected_conditions as EC
 
 if __name__ == '__main__':
 
-    outcome = Check()
-    if outcome == True:
+
+    if Check():
         Bypass()
     else:
-        print('no bypass needed')
+        print("No Bypass needed")
 
 
 
 
-        button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "Sign in securely")))
-        button.click()
 
+    button = driver.find_element(By.CSS_SELECTOR, 'Sign in securely')
+    button.click()
+
+
+driver.quit()
 
 
 
